@@ -1,0 +1,50 @@
+{
+    "name": "Ban All Bot",
+    "description": "https://telegra.ph/file/060d3b6fc581c209ee748.jpg",
+    "repository": "https://github.com/ShikariBaaZ/Ban_Bot",
+    "logo": "",
+    "keywords": [
+        "python",
+        "telegram"
+    ],
+    "buildpacks": [{
+    "url": "heroku/python"
+  }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+     },
+       "addons": [
+      {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your b
+            t token",
+            "value": "",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Get from https://my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get from https://my.telegram.org",
+            "value": "",
+            "required": true
+        },
+        "SUDO": {
+            "description": "sudo ids here.",
+            "value": "",
+            "required": true
+        }
+    }
+}
