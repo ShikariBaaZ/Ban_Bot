@@ -26,8 +26,7 @@
    ],
     "env": {
         "BOT_TOKEN": {
-            "description": "Your b
-            t token",
+            "description": "Your bot token",
             "value": "",
             "required": true
         },
