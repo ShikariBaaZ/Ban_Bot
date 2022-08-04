@@ -1,22 +1,11 @@
 {
-    "name": "Ban All Bot",
-    "description": "https://telegra.ph/file/060d3b6fc581c209ee748.jpg",
-    "repository": "https://github.com/ShikariBaaZ/Ban_Bot",
-    "logo": "",
-    "keywords": [
-        "python",
-        "telegram"
-    ],
-    "buildpacks": [{
-    "url": "heroku/python"
-  }],
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "free"
-        }
-     },
-       "addons": [
+  "name": "BanBot",
+  "description": "Telegram's Ban Bot.",
+  "keywords": ["python", "telegram"],
+  "logo": "https://telegra.ph/file/060d3b6fc581c209ee748.jpg",
+  "repository": "https://github.com/ShikariBaaZ/Ban_Bot",
+  "stack": "container",
+  "addons": [
       {
          "options": {
             "version": "12"
@@ -24,26 +13,31 @@
          "plan": "heroku-postgresql"
       }
    ],
-    "env": {
+   "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],
+  "env": {
         "BOT_TOKEN": {
-            "description": "Your bot token",
-            "value": "",
+            "description": "A bot token from @BotFather",
             "required": true
         },
         "API_ID": {
-            "description": "Get from https://my.telegram.org",
-            "value": "",
+            "description": "App ID from my.telegram.org/apps",
             "required": true
         },
         "API_HASH": {
-            "description": "Get from https://my.telegram.org",
-            "value": "",
+            "description": "App Hash from my.telegram.org/apps",
             "required": true
         },
-        "SUDO": {
-            "description": "sudo ids here.",
-            "value": "",
+        "OWNER_ID": {
+            "description": "Owner's numeric ID",
             "required": true
         }
     }
 }
+
